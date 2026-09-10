@@ -1,0 +1,1505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    background: #f8f9fa;
+    color: #202124;
+    overflow-x: hidden;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+:root {
+
+    --blue: #0b57d0;
+    --green: #34a853;
+    --yellow: #fbbc04;
+    --red: #ea4335;
+
+    --black: #202124;
+    --grey: #5f6368;
+    --line: #dadce0;
+
+    --background: #f8f9fa;
+    --white: #ffffff;
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+
+    height: 86px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(248, 249, 250, 0.88);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(218, 220, 224, 0.6);
+
+}
+
+
+.nav-logo img {
+
+    width: 145px;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    gap: 35px;
+
+}
+
+
+.nav-links a {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+
+    color: var(--grey);
+
+    transition: 0.25s;
+
+}
+
+
+.nav-links a:hover {
+
+    color: var(--blue);
+
+}
+
+
+.menu-btn {
+
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: calc(100vh - 86px);
+
+    padding: 80px 6% 100px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 40px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* HERO LEFT */
+
+.hero-content {
+
+    max-width: 650px;
+
+}
+
+
+.eyebrow {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 20px;
+
+    letter-spacing: 1.8px;
+
+    color: var(--blue);
+
+    margin-bottom: 20px;
+
+    transform: translateY(-25px);
+
+}
+
+
+.hero h1 {
+
+    font-size: clamp(75px, 9vw, 135px);
+
+    line-height: 0.82;
+
+    letter-spacing: -7px;
+
+    font-weight: 700;
+
+}
+
+
+.hero h1 span {
+
+    color: var(--blue);
+
+}
+
+
+.hero-description {
+
+    max-width: 480px;
+
+    margin-top: 38px;
+
+    color: var(--grey);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+.hero-buttons {
+
+    margin-top: 32px;
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+
+.primary-btn,
+.secondary-btn {
+
+    padding: 14px 21px;
+
+    font-size: 12px;
+
+    border: 1px solid var(--black);
+
+    transition: 0.25s;
+
+}
+
+
+.primary-btn {
+
+    background: var(--blue);
+
+    color: white;
+
+    border-color: var(--blue);
+
+}
+
+
+.primary-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 5px 5px 0 var(--black);
+
+}
+
+
+.secondary-btn {
+
+    background: white;
+
+}
+
+
+.secondary-btn:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+
+    height: 560px;
+
+    position: relative;
+
+}
+
+
+/* =========================
+   ISLAND
+========================= */
+
+.island {
+
+    position: absolute;
+
+    width: 360px;
+
+    height: 230px;
+
+    right: 7%;
+
+    bottom: 50px;
+
+    transform: rotate(-2deg);
+
+}
+
+
+/* =========================
+   GRASS
+========================= */
+
+.grass {
+
+    position: absolute;
+
+    top: 100px;
+
+    width: 100%;
+
+    height: 70px;
+
+    background: var(--green);
+
+    border: 5px solid var(--black);
+
+    border-radius: 7px 7px 32px 32px;
+
+    z-index: 2;
+
+    overflow: hidden;
+
+}
+
+
+.grass span {
+
+    position: absolute;
+
+    width: 28px;
+
+    height: 20px;
+
+    background: #1f8b43;
+
+    bottom: 0;
+
+    border-radius: 50% 50% 0 0;
+
+}
+
+
+.grass span:nth-child(1) {
+
+    left: 30px;
+
+}
+
+
+.grass span:nth-child(2) {
+
+    left: 140px;
+
+}
+
+
+.grass span:nth-child(3) {
+
+    right: 30px;
+
+}
+
+
+/* =========================
+   DIRT
+========================= */
+
+.dirt {
+
+    position: absolute;
+
+    top: 165px;
+
+    left: 3%;
+
+    width: 94%;
+
+    height: 120px;
+
+    background:
+
+        repeating-linear-gradient(
+            45deg,
+            #8b5e34 0px,
+            #8b5e34 12px,
+            #704722 12px,
+            #704722 21px
+        );
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        88% 100%,
+        12% 100%
+    );
+
+}
+
+
+/* =========================
+   FLAG — ABOVE ISLAND
+========================= */
+
+.flag {
+
+    position: absolute;
+
+    left: 46%;
+
+    bottom: 105px;
+
+    z-index: 5;
+
+}
+
+
+.pole {
+
+    width: 8px;
+
+    height: 170px;
+
+    background: var(--black);
+
+    margin-left: 5px;
+
+}
+
+
+.flag-shape {
+
+    position: absolute;
+
+    top: 10px;
+
+    left: 10px;
+
+    width: 135px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--blue);
+
+    color: white;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        82% 50%,
+        100% 100%,
+        0 100%
+    );
+
+}
+
+
+/* =========================
+   CLOUDS
+========================= */
+
+.pixel-cloud {
+
+    position: absolute;
+
+    width: 115px;
+
+    height: 42px;
+
+    border: 4px solid #aecbfa;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+}
+
+
+.cloud-one {
+
+    top: 70px;
+
+    left: 7%;
+
+}
+
+
+.cloud-two {
+
+    top: 175px;
+
+    right: 7%;
+
+}
+
+
+/* =========================
+   FLOATING GOOGLE COLOUR BLOCKS
+========================= */
+
+.floating-dot {
+
+    width: 16px;
+
+    height: 16px;
+
+    position: absolute;
+
+}
+
+
+.dot-one {
+
+    top: 50px;
+
+    right: 5%;
+
+    background: var(--red);
+
+}
+
+
+.dot-two {
+
+    top: 265px;
+
+    left: 13%;
+
+    background: var(--yellow);
+
+}
+
+
+.dot-three {
+
+    bottom: 120px;
+
+    left: 38%;
+
+    background: var(--blue);
+
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section-label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--grey);
+
+    margin-bottom: 45px;
+
+}
+
+
+.section-label span {
+
+    color: var(--blue);
+
+}
+
+
+/* =========================
+   01 — WHAT'S HAPPENING
+========================= */
+
+.updates-section {
+
+    padding: 120px 6%;
+
+}
+
+
+.updates-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 50px;
+
+}
+
+
+.updates-header h2 {
+
+    font-size: clamp(55px, 7vw, 95px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+}
+
+
+.updates-header h2 span {
+
+    color: var(--blue);
+
+}
+
+
+.status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+}
+
+
+.status-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+}
+
+
+/* =========================
+   ANNOUNCEMENT CARDS
+========================= */
+
+.announcement-grid {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+.announcement {
+
+    min-height: 330px;
+
+    padding: 25px;
+
+    border: 1px solid var(--line);
+
+    background: white;
+
+    position: relative;
+
+    transition: 0.3s;
+
+    display: block;
+
+}
+
+
+.announcement:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 7px 7px 0 var(--blue);
+
+}
+
+
+.main-announcement {
+
+    background: var(--blue);
+
+    color: white;
+
+    border-color: var(--blue);
+
+}
+
+
+.yellow-card {
+
+    background: var(--yellow);
+
+    border-color: var(--yellow);
+
+}
+
+
+.card-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+}
+
+
+.announcement h3 {
+
+    font-size: 32px;
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+
+    margin-top: 85px;
+
+}
+
+
+.announcement p {
+
+    max-width: 300px;
+
+    margin-top: 20px;
+
+    color: var(--grey);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+}
+
+
+.main-announcement p {
+
+    color: #dbe7ff;
+
+}
+
+
+.arrow {
+
+    position: absolute;
+
+    right: 25px;
+
+    bottom: 20px;
+
+    font-size: 23px;
+
+    transition: 0.25s;
+
+}
+
+
+.announcement:hover .arrow {
+
+    transform: translate(4px, -4px);
+
+}
+
+
+/* =========================
+   02 — HIGHLIGHTS
+========================= */
+
+.winner-section {
+
+    padding: 120px 6%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    background: white;
+
+}
+
+
+.winner-left h2 {
+
+    font-size: clamp(50px, 6vw, 85px);
+
+    line-height: 0.92;
+
+    letter-spacing: -5px;
+
+}
+
+
+.winner-left h2 span {
+
+    color: var(--blue);
+
+}
+
+
+.winner-left p {
+
+    margin-top: 28px;
+
+    max-width: 400px;
+
+    color: var(--grey);
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+}
+
+
+/* HIGHLIGHT CARD */
+
+.winner-card {
+
+    min-height: 270px;
+
+    border: 1px solid var(--black);
+
+    padding: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    position: relative;
+
+    background: var(--background);
+
+    box-shadow: 10px 10px 0 var(--blue);
+
+    transition: 0.3s;
+
+}
+
+
+.winner-card:hover {
+
+    transform: translate(-3px, -3px);
+
+    box-shadow: 13px 13px 0 var(--blue);
+
+}
+
+
+.winner-badge {
+
+    width: 58px;
+
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--yellow);
+
+    font-size: 27px;
+
+}
+
+
+.winner-card span {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: var(--grey);
+
+}
+
+
+.winner-card h3 {
+
+    font-size: 35px;
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+
+    margin: 10px 0;
+
+}
+
+
+.winner-card p {
+
+    color: var(--grey);
+
+    font-size: 12px;
+
+}
+
+
+.winner-arrow {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 25px;
+
+    font-size: 22px;
+
+}
+
+
+/* =========================
+   03 — CONNECT
+========================= */
+
+.connect-section {
+
+    padding: 120px 6%;
+
+}
+
+
+.connect-content h2 {
+
+    font-size: clamp(50px, 6vw, 85px);
+
+    line-height: 0.92;
+
+    letter-spacing: -5px;
+
+}
+
+
+.connect-content h2 span {
+
+    color: var(--blue);
+
+}
+
+
+.connect-content p {
+
+    max-width: 500px;
+
+    margin-top: 28px;
+
+    color: var(--grey);
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================
+   SOCIAL GRID
+========================= */
+
+.social-grid {
+
+    margin-top: 60px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+
+.social-card {
+
+    min-height: 150px;
+
+    padding: 24px;
+
+    border: 1px solid var(--line);
+
+    background: white;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 15px;
+
+    position: relative;
+
+    transition: 0.3s;
+
+}
+
+
+.social-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+.social-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--grey);
+
+    color: white;
+
+    font-weight: 600;
+
+    font-size: 16px;
+
+}
+
+
+.social-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.social-info span {
+
+    font-size: 14px;
+
+}
+
+
+.social-info small {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: var(--grey);
+
+}
+
+
+.social-card strong {
+
+    position: absolute;
+
+    right: 22px;
+
+    top: 20px;
+
+    font-size: 20px;
+
+}
+
+
+/* =========================
+   SOCIAL HOVER COLOURS
+========================= */
+
+.instagram:hover {
+
+    background: #fce8e6;
+
+    border-color: var(--red);
+
+}
+
+
+.instagram:hover .social-icon {
+
+    background: var(--red);
+
+}
+
+
+.facebook:hover {
+
+    background: #e8f0fe;
+
+    border-color: var(--blue);
+
+}
+
+
+.facebook:hover .social-icon {
+
+    background: var(--blue);
+
+}
+
+
+.bevy:hover {
+
+    background: #fff8e1;
+
+    border-color: var(--yellow);
+
+}
+
+
+.bevy:hover .social-icon {
+
+    background: var(--yellow);
+
+    color: var(--black);
+
+}
+
+
+.x-social:hover {
+
+    background: #f1f3f4;
+
+}
+
+
+.x-social:hover .social-icon {
+
+    background: var(--black);
+
+}
+
+
+.linkedin:hover {
+
+    background: #e8f0fe;
+
+    border-color: var(--blue);
+
+}
+
+
+.linkedin:hover .social-icon {
+
+    background: var(--blue);
+
+}
+
+
+.whatsapp:hover {
+
+    background: #e6f4ea;
+
+    border-color: var(--green);
+
+}
+
+
+.whatsapp:hover .social-icon {
+
+    background: var(--green);
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 50px 6% 35px;
+
+    background: transparent;
+
+    color: var(--black);
+
+}
+
+
+.footer-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 35px;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+.footer-logo {
+
+    width: 155px;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+.footer-year {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: var(--grey);
+
+}
+
+
+.footer-bottom {
+
+    padding-top: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+
+.footer-bottom p {
+
+    color: var(--grey);
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+
+    .nav-links {
+
+        display: none;
+
+    }
+
+
+    .menu-btn {
+
+        display: block;
+
+    }
+
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        padding-top: 60px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 75px;
+
+    }
+
+
+    .hero-visual {
+
+        height: 400px;
+
+    }
+
+
+    .island {
+
+        right: 50%;
+
+        transform: translateX(50%) rotate(-2deg) scale(0.85);
+
+    }
+
+
+    .announcement-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .winner-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+
+    .social-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+}
+
+
+@media (max-width: 550px) {
+
+
+    .navbar {
+
+        height: 72px;
+
+    }
+
+
+    .nav-logo img {
+
+        width: 125px;
+
+    }
+
+
+    .hero {
+
+        padding: 50px 6% 70px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 61px;
+
+        letter-spacing: -5px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 14px;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .primary-btn,
+    .secondary-btn {
+
+        text-align: center;
+
+    }
+
+
+    .hero-visual {
+
+        height: 340px;
+
+    }
+
+
+    .island {
+
+        transform:
+            translateX(50%)
+            rotate(-2deg)
+            scale(0.65);
+
+        right: 50%;
+
+    }
+
+
+    .updates-section,
+    .winner-section,
+    .connect-section {
+
+        padding: 85px 6%;
+
+    }
+
+
+    .updates-header {
+
+        display: block;
+
+    }
+
+
+    .status {
+
+        margin-top: 20px;
+
+    }
+
+
+    .updates-header h2,
+    .connect-content h2,
+    .winner-left h2 {
+
+        font-size: 53px;
+
+        letter-spacing: -4px;
+
+    }
+
+
+    .social-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .footer-top {
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        flex-direction: column;
+
+    }
+
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+
+    .footer-logo {
+
+        width: 135px;
+
+    }
+
+}
